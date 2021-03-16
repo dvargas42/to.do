@@ -13,14 +13,14 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
-  const [id, setId] = useState(0)
+  //const [id, setId] = useState(0)
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (newTaskTitle !== '') {
-      const newTask = {id: id , title: newTaskTitle, isComplete: false}
+      const newTask = {id: Date.now() , title: newTaskTitle, isComplete: false}
       setTasks([...tasks, newTask])
-      setId(id + 1)      
+      //setId(id + 1)      
     } 
   }
 
